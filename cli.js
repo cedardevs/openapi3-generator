@@ -41,8 +41,8 @@ if (!openapiFile) {
   program.help(); // This exits the process
 }
 
-generator.generate({
-  openapi: openapiFile,
+generator.generateRecurseFiles({
+  openapi: openapiFile, // TODO rename to dir
   base_dir: program.basedir || baseDir || process.cwd(),
   target_dir: program.output,
   templates: program.templates ? path.resolve(process.cwd(), program.templates) : undefined,
